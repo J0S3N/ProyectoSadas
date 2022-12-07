@@ -16,3 +16,10 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+@import "bootstrap";
+
+.navbar, .navbar-expand-lg, .navbar-dark, .bg-primary {
+    color: #96C11E !important;
+    background-color: #96C11E !important;
+}

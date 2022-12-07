@@ -42,6 +42,15 @@ namespace ProyectoSadas.Models
         [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Por favor, escriba un número de teléfono válido")]
         public string? NumeroTelefono { get; set; }
 
+        [Required(ErrorMessage = "El correo electrónico es obligatorio")]
+        [DisplayName("Correo electrónico")]
+        [RegularExpression(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$", ErrorMessage = "El correo electrónico no es aceptado")]
+        public string? CorreoElectronico { get; set; }
+
+        [Required(ErrorMessage = "La fecga en que se recibe la solicitud es obligatorio")]
+        [DisplayName("Fecha en la que se recibe la solicitud")]
+        public DateTime? FechaRecibe { get; set; }
+
         [Required(ErrorMessage = "La sede donde se recibe la solicitud es obligatorio")]
         [DisplayName("Sede")]
         public string? SedeRecibe { get; set; }
@@ -57,7 +66,7 @@ namespace ProyectoSadas.Models
         // II. Información de la persona estudiante que requiere la asesoría
 
         [Required(ErrorMessage = "El documento de identidad del estudiante es obligatorio")]
-        [RegularExpression(@"^[A-Z0-9 ]+$", ErrorMessage = "Por favor, escriba un documento de identidad válido")]
+        [RegularExpression(@"^[A-Z0-9]+$", ErrorMessage = "Por favor, escriba un documento de identidad válido")]
         [DisplayName("Documento de identidad")]
         public String? DocumentoIdentidadPersonaEstudiante { get; set; }
 
