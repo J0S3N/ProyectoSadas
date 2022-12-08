@@ -65,6 +65,11 @@ namespace ProyectoSadas.Models
 
         // II. Información de la persona estudiante que requiere la asesoría
 
+        [Required(ErrorMessage = "El tipo de documento de identidad del estudiante es obligatorio")]
+        [DisplayName("Tipo de documento de identidad de la persona estudiante")]
+        public String? TipoDocumentoIdentidadPersonaEstudiante { get; set; }
+
+
         [Required(ErrorMessage = "El documento de identidad del estudiante es obligatorio")]
         [RegularExpression(@"^[A-Z0-9]+$", ErrorMessage = "Por favor, escriba un documento de identidad válido")]
         [DisplayName("Documento de identidad")]
@@ -144,7 +149,7 @@ namespace ProyectoSadas.Models
 
         [DisplayName("Otro número de teléfono")]
         [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Por favor, escriba un número de teléfono válido")]
-        public string? OtroNumeroTelefonoCentroEducativo { get; set; }
+        public string? OtroNumeroTelefonoCentroEducativo { get; set; } = "No aplica";
 
         [Required(ErrorMessage = "El correo electrónico del centro esudcativo es obligatorio")]
         [RegularExpression(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$", ErrorMessage = "El correo electrónico no es aceptado")]
@@ -210,41 +215,42 @@ namespace ProyectoSadas.Models
         [DisplayName("Servicios de apoyo con los que cuenta la región educativa")]
         public string? ServicioApoyoRecibeRegionEducativa { get; set; }
 
-        public string? ApoyoEducativoRequeridoComunicacion { get; set; }
+        public int? ApoyoEducativoRequeridoComunicacion { get; set; } = 0;
 
         [DisplayName("Apoyos educativos requeridos para potenciar sus habilidades en el área de comunicación")]
         public string? ApoyoEducativoRequeridoComunicacionDescripcion { get; set; }
 
-        public string? ApoyoEducativoRequeridoAutocuidado { get; set; }
+        public int? ApoyoEducativoRequeridoAutocuidado { get; set; } = 0;
 
         [DisplayName("Apoyos educativos requeridos para potenciar sus habilidades en el área de auto cuidado")]
         public string? ApoyoEducativoRequeridoAutocuidadoDescripcion { get; set; }
 
-        public string? ApoyoEducativoRequeridoAcademica { get; set; }
+        public int? ApoyoEducativoRequeridoAcademica { get; set; } = 0;
 
         [DisplayName("Apoyos educativos requeridos para potenciar sus habilidades en el área académica")]
         public string? ApoyoEducativoRequeridoAcademicaDescripcion { get; set; }
-        public string? ApoyoEducativoRequeridoMotriz { get; set; }
+
+        public int? ApoyoEducativoRequeridoMotriz { get; set; } = 0;
 
         [DisplayName("Apoyos educativos requeridos para potenciar sus habilidades en el área de ")]
         public string? ApoyoEducativoRequeridoMotrizDescripcion { get; set; }
 
-        public string? ApoyoEducativoRequeridoVisual { get; set; }
-
+        public int? ApoyoEducativoRequeridoVisual { get; set; } = 0;
+        
         [DisplayName("Apoyos educativos requeridos para potenciar sus habilidades en el área visual")]
         public string? ApoyoEducativoRequeridoVisualDescripcion { get; set; }
 
-        public string? ApoyoEducativoRequeridoUtilizacionComunidad { get; set; }
+        public int? ApoyoEducativoRequeridoUtilizacionComunidad { get; set; } = 0;
 
         [DisplayName("Apoyos educativos requeridos para potenciar sus habilidades en la utilización de la comunidad ")]
         public string? ApoyoEducativoRequeridoUtilizacionComunidadDescripcion { get; set; }
 
-        public string? ApoyoEducativoRequeridoFormacionTrabajo { get; set; }
+        public int? ApoyoEducativoRequeridoFormacionTrabajo { get; set; } = 0;
 
         [DisplayName("Apoyos educativos requeridos para potenciar sus habilidades en el área de formación para el trabajo")]
         public string? ApoyoEducativoRequeridoFormacionTrabajoDescripcion { get; set; }
 
-        public string? ApoyoEducativoRequeridoOtros { get; set; }
+        public int? ApoyoEducativoRequeridoOtros { get; set; } = 0;
 
         [DisplayName("Apoyos educativos requeridos para potenciar sus habilidades en otras áreas")]
         public string? ApoyoEducativoRequeridoOtrosDescripcion { get; set; }
