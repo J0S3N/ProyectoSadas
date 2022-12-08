@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ProyectoSadas</title>
+    <title>@ViewData["Title"] ProyectoSadas</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-cosmo.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ProyectoSadas.styles.css" asp-append-version="true" />
@@ -19,31 +19,68 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+
+
+            
+
+            <li>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+            </li>
+            <!-- Opcion de Solicitud-->
+            <li>
+                <a class="nav-link" asp-area="" asp-controller="Solicitud" asp-action="Index">Solicitud</a>
+            </li>
+            <!-- Opcion de Centros Educativos -->
+            <li>
+                <a class="nav-link" asp-area="" asp-controller="CentroEducativo" asp-action="Index">Centro Educativo</a>
+            </li>
+            <!--Menu Desplegable de Persona -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Persona</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" asp-controller="Persona" asp-action="Index">Persona</a>
+                    <a class="dropdown-item" asp-controller="Encargado" asp-action="Index">Encargado</a>
+                    <a class="dropdown-item" asp-controller="Estudiante" asp-action="Index">Estudiante</a>
+                    @*                                <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>*@
+                </div>
+            </li>
+                        <div class= "iniciar-sesion">
+                            <!-- Opcion de Inicio sesión -->
+                            <li>
+                <a class="nav-link" asp-area="" asp-controller="Solicitud" asp-action="Index">Iniciar sesión</a>
+            </li>
+            
+            <li>
+                <a class="nav-link" asp-area="" asp-controller="CentroEducativo" asp-action="Index">Registrarse</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+                </div>
+                        </div>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
+
+        <div>
         <main role="main" class="pb-3">
+            <partial name="_Notification" />
             @RenderBody()
         </main>
     </div>
-
+    
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2022 - ProyectoSadas - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
+
 </html>

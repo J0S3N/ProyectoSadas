@@ -1,8 +1,71 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-cosmo.css" />
+    <link rel="stylesheet" href="~/css/bootswatchThemeSADAS.css" />
+    <link rel="stylesheet" href="~//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+</head>
+<body>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="container-carousel">
+
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://scontent.fsjo6-1.fna.fbcdn.net/v/t1.6435-9/127900105_3537987236280332_8719538680979543018_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=e3f864&_nc_ohc=UR423Zza_4EAX8azBoR&_nc_ht=scontent.fsjo6-1.fna&oh=00_AfB4NjsSEkTdADdq1QLXT02S-TJNEOHl9F3aAqb0q5b3Xw&oe=63A49F3A" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="animated fateInDown" style="animation-delay: 1s">¿Qué es el Cenarec?</h5>
+                        <p class="animated animatedFadeInUp fadeInUp d-none d-md-block" style="animation-delay: 2s">El Centro Nacional de Recursos para la Educación Inclusiva (Cenarec), fue creado por decreto ejecutivo N°30224-MEP en el año 2002, sus reformas del año 2007 la 34206-MEP y la del 2009 N°935746-MEP.</p>
+
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://scontent.fsjo6-1.fna.fbcdn.net/v/t1.6435-9/47680685_2006690706076667_2660664289194409984_n.png?_nc_cat=109&ccb=1-7&_nc_sid=e3f864&_nc_ohc=d_GOJ2gW8lwAX_rHo6P&_nc_ht=scontent.fsjo6-1.fna&oh=00_AfCvubCVy-V_HaZKkga5ByFyMGjlfCyazut4nfTc3m6O3A&oe=63A4AB72" class="d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                        <h5 class="animated animatedFadeInUp fadeInUp style="animation-delay: 1s">Objetivo del Cenarec</h5>
+                        <p class="animated animatedFadeInUp fadeInUp d-none d-md-block" style="animation-delay: 2s">El Cenarec es un órgano de desconcentración mínima adscrito al Ministerio de Educación Pública, cuyo principal objetivo es satisfacer los requerimientos tanto de las personas estudiantes en situación de discapacidad, docentes y demás profesionales, familiares, personas investigadoras e integrantes de la comunidad. </p>
+
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://scontent.fsjo6-1.fna.fbcdn.net/v/t1.6435-9/41450595_1892835167462222_4304334727046758400_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=e3f864&_nc_ohc=hIRRrtacxIMAX8kQM4s&_nc_ht=scontent.fsjo6-1.fna&oh=00_AfBWro6bwpRQwfhS8Qvocwfb41DralvAK7ssXzB8jJrBbA&oe=63A4B787" class="d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                        <h5 class="animated animatedFadeInUp fadeInUp placeholder="in-down" style="animation-delay: 1s">Funciones del Cenarec</h5>
+                        <p class="animated animatedFadeInUp fadeInUp d-none d-md-block" style="animation-delay: 2s">Investigación, Capacitación, Información y Orientación DIO, Asesoría en Ayudas Técnicas (DAAT) y Sedes, Centro de producción de materiales educativos en el sistema Braille, relieve y sonoro, UTI</p>
+
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://scontent.fsjo6-1.fna.fbcdn.net/v/t39.30808-6/241199187_4301637443248637_7800786302291604942_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=e3f864&_nc_ohc=JCfC8XYXU2gAX_tGk3w&_nc_ht=scontent.fsjo6-1.fna&oh=00_AfCk4R3oWi-LxBcARMzMQ4pV00dLBYHF18sz5EsR1zukDQ&oe=6381E765" class="d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                        <h5 class="animated animatedFadeInUp fadeInUp placeholder="in-down" style="animation-delay: 1s">¿Quién puede acudir al Cenarec?</h5>
+                        <p class="animated animatedFadeInUp fadeInUp d-none d-md-block" style="animation-delay: 2s">Personas estudiantes en situación de discapacidad, sus familiares, docentes, profesionales, personas investigadoras, miembros de la comunidad educativa costarricense y personas interesadas.</p>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/Formulario.js" asp-append-version="true"></script>
+
+
+</body>
