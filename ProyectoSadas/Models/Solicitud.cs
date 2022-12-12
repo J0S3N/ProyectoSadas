@@ -39,7 +39,7 @@ namespace ProyectoSadas.Models
 
         [Required(ErrorMessage = "El número de Teléfono es obligatorio")]
         [DisplayName("Numero de teléfono")]
-        [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Por favor, escriba un número de teléfono válido")]
+        [RegularExpression(@"^([0-9]{8})$", ErrorMessage = "Por favor, escriba un número de teléfono válido")]
         public string? NumeroTelefono { get; set; }
 
         [Required(ErrorMessage = "El correo electrónico es obligatorio")]
@@ -117,7 +117,7 @@ namespace ProyectoSadas.Models
 
         [Required(ErrorMessage = "El número de teléfono de contacto de la persona estudiante es obligatorio")]
         [DisplayName("Numero de teléfono")]
-        [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Por favor, escriba un número de teléfono válido")]
+        [RegularExpression(@"^([0-9]{8})$", ErrorMessage = "Por favor, escriba un número de teléfono válido")]
         public string? NumeroTelefonoEstudiante { get; set; }
         
         [Required(ErrorMessage = "La provincia de residencia de la persona estudiante es obligatorio")]
@@ -144,11 +144,11 @@ namespace ProyectoSadas.Models
 
         [Required(ErrorMessage = "El número de teléfono del centro educativo es obligatorio")]
         [DisplayName("Número de teléfono")]
-        [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Por favor, escriba un número de teléfono válido")]
+        [RegularExpression(@"^([0-9]{8})$", ErrorMessage = "Por favor, escriba un número de teléfono válido")]
         public string? NumeroTelefonoCentroEducativo { get; set; }
 
         [DisplayName("Otro número de teléfono")]
-        [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Por favor, escriba un número de teléfono válido")]
+        [RegularExpression(@"^([0-9]{8})$", ErrorMessage = "Por favor, escriba un número de teléfono válido")]
         public string? OtroNumeroTelefonoCentroEducativo { get; set; } = "No aplica";
 
         [Required(ErrorMessage = "El correo electrónico del centro esudcativo es obligatorio")]

@@ -22,7 +22,7 @@ namespace ProyectoSadas.Controllers
         // GET: Solicitudes
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Solicitud.ToListAsync());
+            return View(await _context.Solicitud.ToListAsync());
         }
 
         // GET: Solicitudes/Details/5
@@ -148,14 +148,14 @@ namespace ProyectoSadas.Controllers
             {
                 _context.Solicitud.Remove(solicitud);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool SolicitudExists(int id)
         {
-          return _context.Solicitud.Any(e => e.Id == id);
+            return _context.Solicitud.Any(e => e.Id == id);
         }
     }
 }

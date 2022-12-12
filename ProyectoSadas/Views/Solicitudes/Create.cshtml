@@ -97,6 +97,7 @@
                 <label asp-for="DocumentoIdentidadPersonaEstudiante" class="control-label"></label>
                 <input asp-for="DocumentoIdentidadPersonaEstudiante" class="form-control" />
                 <span asp-validation-for="DocumentoIdentidadPersonaEstudiante" class="text-danger"></span>
+                <small>Por favor, no digitar el documento de identidad con espacios o con guiones</small>
             </div>
             <div class="form-group">
                 <label asp-for="NombrePersonaEstudiante" class="control-label"></label>
@@ -169,6 +170,7 @@
                 <label asp-for="NumeroTelefonoEstudiante" class="control-label"></label>
                 <input asp-for="NumeroTelefonoEstudiante" class="form-control" />
                 <span asp-validation-for="NumeroTelefonoEstudiante" class="text-danger"></span>
+                <small>Por favor, no digitar el número telefónico con espacios o con guiones</small>
             </div>
             <div class="form-group">
                 <label asp-for="ProvinciaEstudiante" class="control-label"></label>
@@ -210,11 +212,13 @@
                 <label asp-for="NumeroTelefonoCentroEducativo" class="control-label"></label>
                 <input asp-for="NumeroTelefonoCentroEducativo" class="form-control" />
                 <span asp-validation-for="NumeroTelefonoCentroEducativo" class="text-danger"></span>
+                <small>Por favor, no digitar el número telefónico con espacios o con guiones</small>
             </div>
             <div class="form-group">
                 <label asp-for="OtroNumeroTelefonoCentroEducativo" class="control-label"></label>
                 <input asp-for="OtroNumeroTelefonoCentroEducativo" class="form-control" />
                 <span asp-validation-for="OtroNumeroTelefonoCentroEducativo" class="text-danger"></span>
+                <small>Por favor, no digitar el número telefónico con espacios o con guiones</small>
             </div>
             <div class="form-group">
                 <label asp-for="CorreoElectronicoCentroEducativo" class="control-label"></label>
@@ -304,82 +308,106 @@
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoComunicacion" class="control-label"></label>
-                <input asp-for="ApoyoEducativoRequeridoComunicacion" class="form-control" />
+                <br />
+                No: <input asp-for="ApoyoEducativoRequeridoComunicacion" type="radio" value=0 class="form-check-input" onclick="marcarApoyoComunicacion()" name="apoyo-comunicacion-radio" id="no-apoyo-comunicacion" checked="checked"/>
+                <br />
+                Sí: <input asp-for="ApoyoEducativoRequeridoComunicacion" type="radio" value=1 class="form-check-input" onclick="marcarApoyoComunicacion()" name="apoyo-comunicacion-radio" id="si-apoyo-comunicacion" />
                 <span asp-validation-for="ApoyoEducativoRequeridoComunicacion" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoComunicacionDescripcion" class="control-label"></label>
-                <textarea asp-for="ApoyoEducativoRequeridoComunicacionDescripcion" class="form-control"></textarea>
+                <textarea asp-for="ApoyoEducativoRequeridoComunicacionDescripcion" class="form-control" id="apoyo-comunicacion-descripcion" disabled="true"></textarea>
                 <span asp-validation-for="ApoyoEducativoRequeridoComunicacionDescripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoAutocuidado" class="control-label"></label>
-                <input asp-for="ApoyoEducativoRequeridoAutocuidado" class="form-control" />
+                <br />
+                No: <input asp-for="ApoyoEducativoRequeridoAutocuidado" type="radio" value=0 class="form-check-input" onclick="marcarApoyoAutocuidado()" name="apoyo-autocuidado-radio" id="no-apoyo-autocuidado" checked="checked"/>
+                <br />
+                Sí: <input asp-for="ApoyoEducativoRequeridoAutocuidado" type="radio" value=1 class="form-check-input" onclick="marcarApoyoAutocuidado()" name="apoyo-autocuidado-radio" id="si-apoyo-autocuidado" />
                 <span asp-validation-for="ApoyoEducativoRequeridoAutocuidado" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoAutocuidadoDescripcion" class="control-label"></label>
-                <textarea asp-for="ApoyoEducativoRequeridoAutocuidadoDescripcion" class="form-control"></textarea>
+                <textarea asp-for="ApoyoEducativoRequeridoAutocuidadoDescripcion" class="form-control" id="apoyo-autocuidado-descripcion" disabled="true"></textarea>
                 <span asp-validation-for="ApoyoEducativoRequeridoAutocuidadoDescripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoAcademica" class="control-label"></label>
-                <input asp-for="ApoyoEducativoRequeridoAcademica" class="form-control" />
+                <br />
+                No: <input asp-for="ApoyoEducativoRequeridoAcademica" type="radio" value=0 class="form-check-input" onclick="marcarApoyoAcademia()" name="apoyo-academia-radio" id="no-apoyo-academia" checked="checked"/>
+                <br />
+                Sí: <input asp-for="ApoyoEducativoRequeridoAcademica" type="radio" value=1 class="form-check-input" onclick="marcarApoyoAcademia()" name="apoyo-academia-radio" id="si-apoyo-academia" />
                 <span asp-validation-for="ApoyoEducativoRequeridoAcademica" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoAcademicaDescripcion" class="control-label"></label>
-                <textarea asp-for="ApoyoEducativoRequeridoAcademicaDescripcion" class="form-control"></textarea>
+                <textarea asp-for="ApoyoEducativoRequeridoAcademicaDescripcion" class="form-control" id="apoyo-academia-descripcion" disabled="true"></textarea>
                 <span asp-validation-for="ApoyoEducativoRequeridoAcademicaDescripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoMotriz" class="control-label"></label>
-                <input asp-for="ApoyoEducativoRequeridoMotriz" class="form-control" />
+                <br />
+                No: <input asp-for="ApoyoEducativoRequeridoMotriz" type="radio" value=0 class="form-check-input" onclick="marcarApoyoMotriz()" name="apoyo-motriz-radio" id="no-apoyo-motriz" checked="checked"/>
+                <br />
+                Sí: <input asp-for="ApoyoEducativoRequeridoMotriz" type="radio" value=1 class="form-check-input" onclick="marcarApoyoMotriz()" name="apoyo-motriz-radio" id="si-apoyo-motriz" />
                 <span asp-validation-for="ApoyoEducativoRequeridoMotriz" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoMotrizDescripcion" class="control-label"></label>
-                <textarea asp-for="ApoyoEducativoRequeridoMotrizDescripcion" class="form-control"></textarea>
+                <textarea asp-for="ApoyoEducativoRequeridoMotrizDescripcion" class="form-control" id="apoyo-motriz-descripcion" disabled="true"></textarea>
                 <span asp-validation-for="ApoyoEducativoRequeridoMotrizDescripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoVisual" class="control-label"></label>
-                <input asp-for="ApoyoEducativoRequeridoVisual" class="form-control" />
+                <br />
+                No: <input asp-for="ApoyoEducativoRequeridoVisual" type="radio" value=0 class="form-check-input" onclick="marcarApoyoVisual()" name="apoyo-visual-radio" id="no-apoyo-visual" checked="checked"/>
+                <br />
+                Sí: <input asp-for="ApoyoEducativoRequeridoVisual" type="radio" value=1 class="form-check-input" onclick="marcarApoyoVisual()" name="apoyo-visual-radio" id="si-apoyo-visual" />
                 <span asp-validation-for="ApoyoEducativoRequeridoVisual" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoVisualDescripcion" class="control-label"></label>
-                <textarea asp-for="ApoyoEducativoRequeridoVisualDescripcion" class="form-control"></textarea>
+                <textarea asp-for="ApoyoEducativoRequeridoVisualDescripcion" class="form-control" id="apoyo-visual-descripcion" disabled="true"></textarea>
                 <span asp-validation-for="ApoyoEducativoRequeridoVisualDescripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoUtilizacionComunidad" class="control-label"></label>
-                <input asp-for="ApoyoEducativoRequeridoUtilizacionComunidad" class="form-control" />
+                <br />
+                No: <input asp-for="ApoyoEducativoRequeridoUtilizacionComunidad" type="radio" value=0 class="form-check-input" onclick="marcarApoyoUtilizacionComunidad()" name="apoyo-utilizacion-comunidad-radio" id="no-apoyo-utilizacion-comunidad" checked="checked"/>
+                <br />
+                Sí: <input asp-for="ApoyoEducativoRequeridoUtilizacionComunidad" type="radio" value=1 class="form-check-input" onclick="marcarApoyoUtilizacionComunidad()" name="apoyo-utilizacion-comunidad-radio" id="si-apoyo-utilizacion-comunidad" />
                 <span asp-validation-for="ApoyoEducativoRequeridoUtilizacionComunidad" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoUtilizacionComunidadDescripcion" class="control-label"></label>
-                <textarea asp-for="ApoyoEducativoRequeridoUtilizacionComunidadDescripcion" class="form-control"></textarea>
+                <textarea asp-for="ApoyoEducativoRequeridoUtilizacionComunidadDescripcion" class="form-control" id="apoyo-utilizacion-comunidad-descripcion" disabled="true"></textarea>
                 <span asp-validation-for="ApoyoEducativoRequeridoUtilizacionComunidadDescripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoFormacionTrabajo" class="control-label"></label>
-                <input asp-for="ApoyoEducativoRequeridoFormacionTrabajo" class="form-control" />
+                <br />
+                No: <input asp-for="ApoyoEducativoRequeridoFormacionTrabajo" type="radio" value=0 class="form-check-input" onclick="marcarFormacionTrabajo()" name="apoyo-formacion-trabajo-radio" id="no-apoyo-formacion-trabajo" checked="checked"/>
+                <br />
+                Sí: <input asp-for="ApoyoEducativoRequeridoFormacionTrabajo" type="radio" value=1 class="form-check-input" onclick="marcarFormacionTrabajo()" name="apoyo-formacion-trabajo-radio" id="si-apoyo-formacion-trabajo" />
                 <span asp-validation-for="ApoyoEducativoRequeridoFormacionTrabajo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoFormacionTrabajoDescripcion" class="control-label"></label>
-                <textarea asp-for="ApoyoEducativoRequeridoFormacionTrabajoDescripcion" class="form-control"></textarea>
+                <textarea asp-for="ApoyoEducativoRequeridoFormacionTrabajoDescripcion" class="form-control" id="apoyo-formacion-trabajo-descripcion" disabled="true"></textarea>
                 <span asp-validation-for="ApoyoEducativoRequeridoFormacionTrabajoDescripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoOtros" class="control-label"></label>
-                <input asp-for="ApoyoEducativoRequeridoOtros" class="form-control" />
+                <br />
+                No: <input asp-for="ApoyoEducativoRequeridoOtros" type="radio" value=0 class="form-check-input" onclick="marcarOtros()" name="apoyo-otros-radio" id="no-apoyo-otros" checked="checked"/>
+                <br />
+                Sí: <input asp-for="ApoyoEducativoRequeridoOtros" type="radio" value=1 class="form-check-input" onclick="marcarOtros()" name="apoyo-otros-radio" id="si-apoyo-otros" />
                 <span asp-validation-for="ApoyoEducativoRequeridoOtros" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoOtrosDescripcion" class="control-label"></label>
-                <textarea asp-for="ApoyoEducativoRequeridoOtrosDescripcion" class="form-control"></textarea>
+                <textarea asp-for="ApoyoEducativoRequeridoOtrosDescripcion" class="form-control" id="apoyo-otros-descripcion" disabled="true"></textarea>
                 <span asp-validation-for="ApoyoEducativoRequeridoOtrosDescripcion" class="text-danger"></span>
             </div>
             <div>
@@ -458,7 +486,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Volver al índice</a>
 </div>
 
 @section Scripts {
@@ -517,6 +545,94 @@
             }
             if(document.getElementById('si-producto-no-gubernamental').checked == true){
   		        document.getElementById("producto-no-gubernamental-descripcion").disabled = false;
+            }
+        }
+    </script>
+    <script>
+        function marcarApoyoComunicacion(){
+            if (document.getElementById('no-apoyo-comunicacion').checked == true) {
+                document.getElementById("apoyo-comunicacion-descripcion").disabled = true;
+                document.getElementById("apoyo-comunicacion-descripcion").value = ' ';
+            }
+            if (document.getElementById('si-apoyo-comunicacion').checked == true) {
+                document.getElementById("apoyo-comunicacion-descripcion").disabled = false;
+            }
+        }
+    </script>
+    <script>
+        function marcarApoyoAutocuidado(){
+            if (document.getElementById('no-apoyo-autocuidado').checked == true) {
+                document.getElementById("apoyo-autocuidado-descripcion").disabled = true;
+                document.getElementById("apoyo-autocuidado-descripcion").value = ' ';
+            }
+            if (document.getElementById('si-apoyo-autocuidado').checked == true) {
+                document.getElementById("apoyo-autocuidado-descripcion").disabled = false;
+            }
+        }
+    </script>
+    <script>
+        function marcarApoyoVisual(){
+            if (document.getElementById('no-apoyo-visual').checked == true) {
+                document.getElementById("apoyo-visual-descripcion").disabled = true;
+                document.getElementById("apoyo-visual-descripcion").value = ' ';
+            }
+            if (document.getElementById('si-apoyo-visual').checked == true) {
+                document.getElementById("apoyo-visual-descripcion").disabled = false;
+            }
+        }
+    </script>
+    <script>
+        function marcarApoyoMotriz(){
+            if (document.getElementById('no-apoyo-motriz').checked == true) {
+                document.getElementById("apoyo-motriz-descripcion").disabled = true;
+                document.getElementById("apoyo-motriz-descripcion").value = ' ';
+            }
+            if (document.getElementById('si-apoyo-motriz').checked == true) {
+                document.getElementById("apoyo-motriz-descripcion").disabled = false;
+            }
+        }
+    </script>
+    <script>
+        function marcarApoyoAcademia(){
+            if (document.getElementById('no-apoyo-academia').checked == true) {
+                document.getElementById("apoyo-academia-descripcion").disabled = true;
+                document.getElementById("apoyo-academia-descripcion").value = ' ';
+            }
+            if (document.getElementById('si-apoyo-academia').checked == true) {
+                document.getElementById("apoyo-academia-descripcion").disabled = false;
+            }
+        }
+    </script>
+    <script>
+        function marcarApoyoUtilizacionComunidad(){
+            if (document.getElementById('no-apoyo-utilizacion-comunidad').checked == true) {
+                document.getElementById("apoyo-utilizacion-comunidad-descripcion").disabled = true;
+                document.getElementById("apoyo-utilizacion-comunidad-descripcion").value = ' ';
+            }
+            if (document.getElementById('si-apoyo-utilizacion-comunidad').checked == true) {
+                document.getElementById("apoyo-utilizacion-comunidad-descripcion").disabled = false;
+            }
+        }
+    </script>
+    <script>
+        function marcarFormacionTrabajo(){
+            if (document.getElementById('no-apoyo-formacion-trabajo').checked == true) {
+                document.getElementById("apoyo-formacion-trabajo-descripcion").disabled = true;
+                document.getElementById("apoyo-formacion-trabajo-descripcion").value = ' ';
+            }
+            if (document.getElementById('si-apoyo-formacion-trabajo').checked == true) {
+                document.getElementById("apoyo-formacion-trabajo-descripcion").disabled = false;
+            }
+        }
+    </script>
+    <script>
+        function marcarOtros(){
+            if (document.getElementById('no-apoyo-otros').checked == true) {
+                document.getElementById("apoyo-otros-descripcion").disabled = true;
+                document.getElementById("apoyo-otros-descripcion").value = ' ';
+            }
+            if (document.getElementById('si-apoyo-otros').checked == true) {
+                document.getElementById("apoyo-otros-descripcion").disabled = false;
             }
         }
     </script>
