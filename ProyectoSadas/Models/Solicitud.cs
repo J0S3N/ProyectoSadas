@@ -85,7 +85,7 @@ namespace ProyectoSadas.Models
 
         [Required(ErrorMessage = "La edad del estudiante es obligatorio")]
         [DisplayName("Edad")]
-        public DateTime? EdadEstudiante { get; set; }
+        public string? EdadEstudiante { get; set; }
         
         [Required(ErrorMessage = "El nivel educativo que cursa el estudiante es obligatorio")]
         [DisplayName("Nivel educativo")]
@@ -277,13 +277,13 @@ namespace ProyectoSadas.Models
         public int? ProductoApoyoGubernamental { get; set; }
 
         [DisplayName("Mencione el producto de apoyo solicitado")]
-        public string? ProductoApoyoGubernamentalDescripcion { get; set; }
+        public string? ProductoApoyoGubernamentalDescripcion { get; set; } = " ";
 
         [Required]
         [DisplayName("¿Ha realizado alguna solicitud previa para obtener productos de apoyo con algún de Organizaciones No Gubernamentales?")]
         public int? ProductoApoyoNoGubernamental { get; set; }
 
         [DisplayName("Mencione el producto de apoyo solicitado")]
-        public string? ProductoApoyoNoGubernamentalDescripcion { get; set; }
+        public string? ProductoApoyoNoGubernamentalDescripcion { get; set; } = " ";
     }
 }

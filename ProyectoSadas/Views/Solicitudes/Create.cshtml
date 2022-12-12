@@ -1,20 +1,23 @@
 ﻿@model ProyectoSadas.Models.Solicitud
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Registrar solicitud";
 }
+<br />
+<h1>Solicitud para la Asesoría en Productos de Apoyo</h1>
 
-<h1>Create</h1>
-
-<h4>Solicitud</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div>
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div>
+                <h3>I. Información de la solicitud</h3>
+                <hr />
+            </div>
             <div class="form-group">
                 <label asp-for="FechaRealiza" class="control-label"></label>
-                <input type="date" asp-for="FechaRealiza" class="form-control" id='FechaRealiza'/>
+                <input type="date" asp-for="FechaRealiza" class="form-control fecha-actual"/>
                 <span asp-validation-for="FechaRealiza" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -44,12 +47,19 @@
             </div>
             <div class="form-group">
                 <label asp-for="FechaRecibe" class="control-label"></label>
-                <input type="date" asp-for="FechaRecibe" class="form-control" />
+                <input type="date" asp-for="FechaRecibe" class="form-control fecha-actual"/>
                 <span asp-validation-for="FechaRecibe" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="SedeRecibe" class="control-label"></label>
-                <input asp-for="SedeRecibe" class="form-control" />
+                <select asp-for="SedeRecibe" class="form-select">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                    <option>Limón</option>
+                    <option>San Carlos</option>
+                    <option>Coto</option>
+                    <option>Central-Cenarec</option>
+                    <option>Liberia</option>
+                </select>
                 <span asp-validation-for="SedeRecibe" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -59,12 +69,28 @@
             </div>
             <div class="form-group">
                 <label asp-for="MetodoEnvio" class="control-label"></label>
-                <input asp-for="MetodoEnvio" class="form-control" />
+                <select asp-for="MetodoEnvio" class="form-select">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                    <option>Documento Físico</option>
+                    <option>Correo eléctronico</option>
+                </select>
                 <span asp-validation-for="MetodoEnvio" class="text-danger"></span>
+            </div>
+            <div>
+                <br />
+                <h3>II. Información de la persona estudiante que requiere la asesoría</h3>
+                <hr />
             </div>
             <div class="form-group">
                 <label asp-for="TipoDocumentoIdentidadPersonaEstudiante" class="control-label"></label>
-                <input asp-for="TipoDocumentoIdentidadPersonaEstudiante" class="form-control" />
+                <select asp-for="TipoDocumentoIdentidadPersonaEstudiante" class="form-select">
+                    <option disabled selected></option>
+                    <option>Cédula Nacional</option>
+                    <option>Cédula de Residencia</option>
+                    <option>Carnet de Refugiado</option>
+                    <option>Pasaporte</option>
+                    <option>Indocumentado</option>
+                </select>
                 <span asp-validation-for="TipoDocumentoIdentidadPersonaEstudiante" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -79,17 +105,34 @@
             </div>
             <div class="form-group">
                 <label asp-for="FechaNacimientoEstudiante" class="control-label"></label>
-                <input type="date" asp-for="FechaNacimientoEstudiante" class="form-control" />
+                <input type="date" asp-for="FechaNacimientoEstudiante" class="form-control" id="fecha-nacimiento" onchange="ageCount()"/>
                 <span asp-validation-for="FechaNacimientoEstudiante" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="EdadEstudiante" class="control-label"></label>
-                <input asp-for="EdadEstudiante" class="form-control" />
+                <input disabled="true" asp-for="EdadEstudiante" class="form-control" id="edad"/>
                 <span asp-validation-for="EdadEstudiante" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="NivelEducativoEstudiante" class="control-label"></label>
-                <input asp-for="NivelEducativoEstudiante" class="form-control" />
+                <select class="form-select" asp-for="NivelEducativoEstudiante">
+                    <option selected="selected" disabled="true">Seleccione una opción</option>
+                    <option>Ciclo de Materno Infantil</option>
+                    <option>Ciclo de Transición</option>
+                    <option>Primer año</option>
+                    <option>Segundo año</option>
+                    <option>Tercer año</option>
+                    <option>Cuarto año</option>
+                    <option>Quinto año</option>
+                    <option>Sexto año</option>
+                    <option>Séptimo año</option>
+                    <option>Octavo año</option>
+                    <option>Noveno año</option>
+                    <option>Décimo año</option>
+                    <option>Undécimo año</option>
+                    <option>Duodécimo año</option>
+                    <option>Otro</option>
+                </select>
                 <span asp-validation-for="NivelEducativoEstudiante" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -99,7 +142,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="DescripcionCondicionPresentaEstudiante" class="control-label"></label>
-                <input asp-for="DescripcionCondicionPresentaEstudiante" class="form-control" />
+                <textarea asp-for="DescripcionCondicionPresentaEstudiante" class="form-control"> </textarea>
                 <span asp-validation-for="DescripcionCondicionPresentaEstudiante" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -129,23 +172,34 @@
             </div>
             <div class="form-group">
                 <label asp-for="ProvinciaEstudiante" class="control-label"></label>
-                <input asp-for="ProvinciaEstudiante" class="form-control" />
+                <select asp-for="ProvinciaEstudiante" class="form-select" id="slt-provincias-estudiante">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                </select>
                 <span asp-validation-for="ProvinciaEstudiante" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CantonEstudiante" class="control-label"></label>
-                <input asp-for="CantonEstudiante" class="form-control" />
+                <select asp-for="CantonEstudiante" class="form-select" id="slt-cantones-estudiante">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                </select>
                 <span asp-validation-for="CantonEstudiante" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DistritoEstudiante" class="control-label"></label>
-                <input asp-for="DistritoEstudiante" class="form-control" />
+                <select asp-for="DistritoEstudiante" class="form-select" id="slt-distritos-estudiante">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                </select>
                 <span asp-validation-for="DistritoEstudiante" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DireccionEstudiante" class="control-label"></label>
                 <input asp-for="DireccionEstudiante" class="form-control" />
                 <span asp-validation-for="DireccionEstudiante" class="text-danger"></span>
+            </div>
+            <div>
+                <br />
+                <h3>III. Información del centro educativo al que asiste la persona estudiante</h3>
+                <hr />
             </div>
             <div class="form-group">
                 <label asp-for="NombreCentroEducativo" class="control-label"></label>
@@ -169,17 +223,23 @@
             </div>
             <div class="form-group">
                 <label asp-for="ProvinciaCentroEducativo" class="control-label"></label>
-                <input asp-for="ProvinciaCentroEducativo" class="form-control" />
+                <select asp-for="ProvinciaCentroEducativo" class="form-select" id="slt-provincias">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                </select>
                 <span asp-validation-for="ProvinciaCentroEducativo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CantonCentroEducativo" class="control-label"></label>
-                <input asp-for="CantonCentroEducativo" class="form-control" />
+                <select asp-for="CantonCentroEducativo" class="form-select" id="slt-cantones">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                </select>
                 <span asp-validation-for="CantonCentroEducativo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DistritoCentroEducativo" class="control-label"></label>
-                <input asp-for="DistritoCentroEducativo" class="form-control" />
+                <select asp-for="DistritoCentroEducativo" class="form-select" id="slt-distritos">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                </select>
                 <span asp-validation-for="DistritoCentroEducativo" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -212,29 +272,34 @@
                 <input asp-for="NombrePersonaCentroEducativo" class="form-control" />
                 <span asp-validation-for="NombrePersonaCentroEducativo" class="text-danger"></span>
             </div>
+            <div>
+                <br />
+                <h3>IV. Información sobre la solicitud de asesoría</h3>
+                <hr />
+            </div>
             <div class="form-group">
                 <label asp-for="MotivoSolicitud" class="control-label"></label>
-                <input asp-for="MotivoSolicitud" class="form-control" />
+                <textarea asp-for="MotivoSolicitud" class="form-control"></textarea>
                 <span asp-validation-for="MotivoSolicitud" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoOrganizatiVoSolicitud" class="control-label"></label>
-                <input asp-for="ApoyoOrganizatiVoSolicitud" class="form-control" />
+                <textarea asp-for="ApoyoOrganizatiVoSolicitud" class="form-control"></textarea>
                 <span asp-validation-for="ApoyoOrganizatiVoSolicitud" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ProductoApoyoEmpleadoSolicitud" class="control-label"></label>
-                <input asp-for="ProductoApoyoEmpleadoSolicitud" class="form-control" />
+                <textarea asp-for="ProductoApoyoEmpleadoSolicitud" class="form-control"></textarea>
                 <span asp-validation-for="ProductoApoyoEmpleadoSolicitud" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ServicioApoyoRecibe" class="control-label"></label>
-                <input asp-for="ServicioApoyoRecibe" class="form-control" />
+                <textarea asp-for="ServicioApoyoRecibe" class="form-control"></textarea>
                 <span asp-validation-for="ServicioApoyoRecibe" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ServicioApoyoRecibeRegionEducativa" class="control-label"></label>
-                <input asp-for="ServicioApoyoRecibeRegionEducativa" class="form-control" />
+                <textarea asp-for="ServicioApoyoRecibeRegionEducativa" class="form-control"></textarea>
                 <span asp-validation-for="ServicioApoyoRecibeRegionEducativa" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -244,7 +309,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoComunicacionDescripcion" class="control-label"></label>
-                <input asp-for="ApoyoEducativoRequeridoComunicacionDescripcion" class="form-control" />
+                <textarea asp-for="ApoyoEducativoRequeridoComunicacionDescripcion" class="form-control"></textarea>
                 <span asp-validation-for="ApoyoEducativoRequeridoComunicacionDescripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -254,7 +319,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoAutocuidadoDescripcion" class="control-label"></label>
-                <input asp-for="ApoyoEducativoRequeridoAutocuidadoDescripcion" class="form-control" />
+                <textarea asp-for="ApoyoEducativoRequeridoAutocuidadoDescripcion" class="form-control"></textarea>
                 <span asp-validation-for="ApoyoEducativoRequeridoAutocuidadoDescripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -264,7 +329,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoAcademicaDescripcion" class="control-label"></label>
-                <input asp-for="ApoyoEducativoRequeridoAcademicaDescripcion" class="form-control" />
+                <textarea asp-for="ApoyoEducativoRequeridoAcademicaDescripcion" class="form-control"></textarea>
                 <span asp-validation-for="ApoyoEducativoRequeridoAcademicaDescripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -274,7 +339,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoMotrizDescripcion" class="control-label"></label>
-                <input asp-for="ApoyoEducativoRequeridoMotrizDescripcion" class="form-control" />
+                <textarea asp-for="ApoyoEducativoRequeridoMotrizDescripcion" class="form-control"></textarea>
                 <span asp-validation-for="ApoyoEducativoRequeridoMotrizDescripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -284,7 +349,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoVisualDescripcion" class="control-label"></label>
-                <input asp-for="ApoyoEducativoRequeridoVisualDescripcion" class="form-control" />
+                <textarea asp-for="ApoyoEducativoRequeridoVisualDescripcion" class="form-control"></textarea>
                 <span asp-validation-for="ApoyoEducativoRequeridoVisualDescripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -294,7 +359,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoUtilizacionComunidadDescripcion" class="control-label"></label>
-                <input asp-for="ApoyoEducativoRequeridoUtilizacionComunidadDescripcion" class="form-control" />
+                <textarea asp-for="ApoyoEducativoRequeridoUtilizacionComunidadDescripcion" class="form-control"></textarea>
                 <span asp-validation-for="ApoyoEducativoRequeridoUtilizacionComunidadDescripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -304,7 +369,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoFormacionTrabajoDescripcion" class="control-label"></label>
-                <input asp-for="ApoyoEducativoRequeridoFormacionTrabajoDescripcion" class="form-control" />
+                <textarea asp-for="ApoyoEducativoRequeridoFormacionTrabajoDescripcion" class="form-control"></textarea>
                 <span asp-validation-for="ApoyoEducativoRequeridoFormacionTrabajoDescripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -314,51 +379,79 @@
             </div>
             <div class="form-group">
                 <label asp-for="ApoyoEducativoRequeridoOtrosDescripcion" class="control-label"></label>
-                <input asp-for="ApoyoEducativoRequeridoOtrosDescripcion" class="form-control" />
+                <textarea asp-for="ApoyoEducativoRequeridoOtrosDescripcion" class="form-control"></textarea>
                 <span asp-validation-for="ApoyoEducativoRequeridoOtrosDescripcion" class="text-danger"></span>
+            </div>
+            <div>
+                <br />
+                <h3>V. Obvservaciones</h3>
+                <hr />
             </div>
             <div class="form-group">
                 <label asp-for="AsesoriaPrevia" class="control-label"></label>
-                <input asp-for="AsesoriaPrevia" class="form-control" />
+                <br />
+                No: <input asp-for="AsesoriaPrevia" type="radio" value=0 class="form-check-input" onclick="marcarAsesoriaPrevia()" name="asesoria-radio" id="no-asesoria" checked="checked" />
+                <br />
+                Sí: <input asp-for="AsesoriaPrevia" type="radio" value=1 class="form-check-input" onclick="marcarAsesoriaPrevia()" name="asesoria-radio" id="si-asesoria" />
                 <span asp-validation-for="AsesoriaPrevia" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="SedeAsesoriaPrevia" class="control-label"></label>
-                <input asp-for="SedeAsesoriaPrevia" class="form-control" />
+                <select asp-for="SedeAsesoriaPrevia" class="form-select" id="sede-asesoria-previa" disabled="true">
+                    <option selected="selected" disabled="true" value="No aplica">Por favor, seleccione una opción</option>
+                    <option>Limón</option>
+                    <option>San Carlos</option>
+                    <option>Coto</option>
+                    <option>Central-Cenarec</option>
+                    <option>Liberia</option>
+                </select>
                 <span asp-validation-for="SedeAsesoriaPrevia" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="AdjuntaCertificacionMedicaCCSS" class="control-label"></label>
-                <input asp-for="AdjuntaCertificacionMedicaCCSS" class="form-control" />
+                <br />
+                Sí: <input asp-for="AdjuntaCertificacionMedicaCCSS" type="radio" value=1 class="form-check-input" checked="checked" />
+                <br />
+                No: <input asp-for="AdjuntaCertificacionMedicaCCSS" type="radio" value=0 class="form-check-input" />
                 <span asp-validation-for="AdjuntaCertificacionMedicaCCSS" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="AdjuntaCertificacionMedicaCONAPDIS" class="control-label"></label>
-                <input asp-for="AdjuntaCertificacionMedicaCONAPDIS" class="form-control" />
+                <br />
+                Sí: <input asp-for="AdjuntaCertificacionMedicaCONAPDIS" type="radio" value=1 class="form-check-input" checked="checked" />
+                <br />
+                No: <input asp-for="AdjuntaCertificacionMedicaCONAPDIS" type="radio" value=0 class="form-check-input" />
                 <span asp-validation-for="AdjuntaCertificacionMedicaCONAPDIS" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ProductoApoyoGubernamental" class="control-label"></label>
-                <input asp-for="ProductoApoyoGubernamental" class="form-control" />
+                <br />
+                No: <input asp-for="ProductoApoyoGubernamental" type="radio" value=0 class="form-check-input" onclick="marcarProductoGubernamental()" name="producto-gubernamental-radio" id="no-producto-gubernamental" checked="checked"/>
+                <br />
+                Sí: <input asp-for="ProductoApoyoGubernamental" type="radio" value=1 class="form-check-input" onclick="marcarProductoGubernamental()" name="producto-gubernamental-radio" id="si-producto-gubernamental"/>
                 <span asp-validation-for="ProductoApoyoGubernamental" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ProductoApoyoGubernamentalDescripcion" class="control-label"></label>
-                <input asp-for="ProductoApoyoGubernamentalDescripcion" class="form-control" />
+                <textarea asp-for="ProductoApoyoGubernamentalDescripcion" class="form-control" id="producto-gubernamental-descripcion" disabled="true"></textarea>
                 <span asp-validation-for="ProductoApoyoGubernamentalDescripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ProductoApoyoNoGubernamental" class="control-label"></label>
-                <input asp-for="ProductoApoyoNoGubernamental" class="form-control" />
+               <br />
+                No: <input asp-for="ProductoApoyoNoGubernamental" type="radio" value=0 class="form-check-input" onclick="marcarProductoNoGubernamental()" name="producto-no-gubernamental-radio" id="no-producto-no-gubernamental" checked="checked"/>
+                <br />
+                Sí: <input asp-for="ProductoApoyoNoGubernamental" type="radio" value=1 class="form-check-input" onclick="marcarProductoNoGubernamental()" name="producto-no-gubernamental-radio" id="si-producto-no-gubernamental"/>
                 <span asp-validation-for="ProductoApoyoNoGubernamental" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ProductoApoyoNoGubernamentalDescripcion" class="control-label"></label>
-                <input asp-for="ProductoApoyoNoGubernamentalDescripcion" class="form-control" />
+                <textarea asp-for="ProductoApoyoNoGubernamentalDescripcion" class="form-control" id="producto-no-gubernamental-descripcion" disabled="true"></textarea>
                 <span asp-validation-for="ProductoApoyoNoGubernamentalDescripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <br />
+                <input type="submit" value="Registrar solicitud" class="btn btn-primary" />
             </div>
         </form>
     </div>
@@ -374,6 +467,61 @@
         var d = new Date();
         d.setHours(d.getHours() - 6);
         
-        document.getElementById('FechaRealiza').valueAsDate = d;
+        Array.from(document.getElementsByClassName("form-control fecha-actual"))
+        .forEach((element) => element.valueAsDate = d);
     </script>
+    <script>
+        function ageCount() {
+            var now = new Date();
+            var currentY = now.getFullYear();
+            var currentM = now.getMonth();
+
+            var dobget = document.getElementById("fecha-nacimiento").valueAsDate;
+            var dob = new Date(dobget);
+            var prevY = dob.getFullYear();
+            var prevM = dob.getMonth();
+
+            var ageY = currentY - prevY;
+            var ageM = Math.abs(currentM - prevM);
+
+            document.getElementById('edad').value = ageY + " años y " + ageM + ' meses';
+        }
+    </script>
+    <script>
+        function marcarAsesoriaPrevia(){
+            if(document.getElementById('no-asesoria').checked == true){
+  		        document.getElementById("sede-asesoria-previa").disabled = true;
+                document.getElementById("sede-asesoria-previa").value = "No aplica";
+            }
+            if(document.getElementById('si-asesoria').checked == true){
+  		        document.getElementById("sede-asesoria-previa").disabled = false;
+            }
+        }
+    </script>
+    <script>
+        function marcarProductoGubernamental(){
+            if(document.getElementById('no-producto-gubernamental').checked == true){
+  		        document.getElementById("producto-gubernamental-descripcion").disabled = true;
+                document.getElementById("producto-gubernamental-descripcion").value = ' ';
+            }
+            if(document.getElementById('si-producto-gubernamental').checked == true){
+  		        document.getElementById("producto-gubernamental-descripcion").disabled = false;
+            }
+        }
+    </script>
+    <script>
+        function marcarProductoNoGubernamental(){
+            if(document.getElementById('no-producto-no-gubernamental').checked == true){
+  		        document.getElementById("producto-no-gubernamental-descripcion").disabled = true;
+                document.getElementById("producto-no-gubernamental-descripcion").value = ' ';
+            }
+            if(document.getElementById('si-producto-no-gubernamental').checked == true){
+  		        document.getElementById("producto-no-gubernamental-descripcion").disabled = false;
+            }
+        }
+    </script>
+    <script src="~/js/distribucion-cr.js"></script>
+    <script src="~/js/distribucion-cr-estudiante.js"></script>
+    <script src="~/js/formulario.js"></script>
+    <script src="~/js/formularioe.js"></script>
 }

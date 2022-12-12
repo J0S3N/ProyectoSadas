@@ -16,4 +16,8 @@
     <PackageReference Include="Moment.js" Version="2.29.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\js\regiones-administrativas\" />
+  </ItemGroup>
+
 </Project>
