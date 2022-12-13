@@ -85,7 +85,7 @@ namespace ProyectoSadas.Models
 
         [Required(ErrorMessage = "La edad del estudiante es obligatorio")]
         [DisplayName("Edad")]
-        public string? EdadEstudiante { get; set; }
+        public string? EdadEstudiante { get; set; } = "0 años con 0 meses";
         
         [Required(ErrorMessage = "El nivel educativo que cursa el estudiante es obligatorio")]
         [DisplayName("Nivel educativo")]
@@ -197,68 +197,76 @@ namespace ProyectoSadas.Models
 
         [Required(ErrorMessage = "El motivo de la solicitud es obligatorio")]
         [DisplayName("Motivo de la solicitud")]
-        public string? MotivoSolicitud { get; set; }
+        public string? MotivoSolicitud { get; set; } = " ";
 
         [Required(ErrorMessage = "Los apoyos organizativos son obligatorios")]
         [DisplayName("Apoyos organizativos (de acceso) aplicadas en el trabajo con la persona estudiante")]
-        public string? ApoyoOrganizatiVoSolicitud { get; set; }
+        public string? ApoyoOrganizatiVoSolicitud { get; set; } = " ";
 
         [Required(ErrorMessage = "Los productos de apoyo que ha empleado son obligatorios")]
         [DisplayName("Productos de apoyo que ha empleado o emplea la persona estudiante")]
-        public string? ProductoApoyoEmpleadoSolicitud { get; set; }
+        public string? ProductoApoyoEmpleadoSolicitud { get; set; } = " ";
 
         [Required(ErrorMessage = "Los servicios de apoyo que recibe la persona estudiante en la región de asesoría es obligatorio")]
         [DisplayName("Servicios de apoyo que recibe la persona estudiante en la región:")]
-        public string? ServicioApoyoRecibe { get; set; }
+        public string? ServicioApoyoRecibe { get; set; } = " ";
 
         [Required(ErrorMessage = "Los servicios de apoyo con los que cuenta la región educativa de asesoría es obligatorio")]
         [DisplayName("Servicios de apoyo con los que cuenta la región educativa")]
-        public string? ServicioApoyoRecibeRegionEducativa { get; set; }
+        public string? ServicioApoyoRecibeRegionEducativa { get; set; } = " ";
 
+        [DisplayName("¿Requiere apoyos educativos para potenciar sus habilidades en el área de comunicación?")]
         public int? ApoyoEducativoRequeridoComunicacion { get; set; } = 0;
 
-        [DisplayName("Apoyos educativos requeridos para potenciar sus habilidades en el área de comunicación")]
-        public string? ApoyoEducativoRequeridoComunicacionDescripcion { get; set; }
+        [DisplayName("Descripción de los apoyos educativos requeridos para potenciar sus habilidades en el área de comunicación")]
+        public string? ApoyoEducativoRequeridoComunicacionDescripcion { get; set; } = " ";
 
+        [DisplayName("¿Requiere apoyos educativos para potenciar sus habilidades en el área de autocuidado?")]
         public int? ApoyoEducativoRequeridoAutocuidado { get; set; } = 0;
 
-        [DisplayName("Apoyos educativos requeridos para potenciar sus habilidades en el área de auto cuidado")]
-        public string? ApoyoEducativoRequeridoAutocuidadoDescripcion { get; set; }
+        [DisplayName("Descripción de los apoyos educativos requeridos para potenciar sus habilidades en el área de autocuidado")]
+        public string? ApoyoEducativoRequeridoAutocuidadoDescripcion { get; set; } = " ";
 
+        [DisplayName("¿Requiere apoyos educativos para potenciar sus habilidades en el área académica?")]
         public int? ApoyoEducativoRequeridoAcademica { get; set; } = 0;
 
-        [DisplayName("Apoyos educativos requeridos para potenciar sus habilidades en el área académica")]
-        public string? ApoyoEducativoRequeridoAcademicaDescripcion { get; set; }
+        [DisplayName("Descripción de los apoyos educativos requeridos para potenciar sus habilidades en el área académica")]
+        public string? ApoyoEducativoRequeridoAcademicaDescripcion { get; set; } = " ";
 
+        [DisplayName("¿Requiere apoyos educativos para potenciar sus habilidades en el área motriz?")]
         public int? ApoyoEducativoRequeridoMotriz { get; set; } = 0;
 
-        [DisplayName("Apoyos educativos requeridos para potenciar sus habilidades en el área de ")]
-        public string? ApoyoEducativoRequeridoMotrizDescripcion { get; set; }
+        [DisplayName("Descripción de los apoyos educativos requeridos para potenciar sus habilidades en el área de ")]
+        public string? ApoyoEducativoRequeridoMotrizDescripcion { get; set; } = " ";
 
+        [DisplayName("¿Requiere apoyos educativos para potenciar sus habilidades en el área visual?")]
         public int? ApoyoEducativoRequeridoVisual { get; set; } = 0;
-        
-        [DisplayName("Apoyos educativos requeridos para potenciar sus habilidades en el área visual")]
-        public string? ApoyoEducativoRequeridoVisualDescripcion { get; set; }
 
+        [DisplayName("Descripción de los apoyos educativos requeridos para potenciar sus habilidades en el área visual")]
+        public string? ApoyoEducativoRequeridoVisualDescripcion { get; set; } = " ";
+
+        [DisplayName("¿Requiere apoyos educativos para potenciar sus habilidades en el área de la utilización de la comunidad?")]
         public int? ApoyoEducativoRequeridoUtilizacionComunidad { get; set; } = 0;
 
-        [DisplayName("Apoyos educativos requeridos para potenciar sus habilidades en la utilización de la comunidad ")]
-        public string? ApoyoEducativoRequeridoUtilizacionComunidadDescripcion { get; set; }
+        [DisplayName("Descripción de los apoyos educativos requeridos para potenciar sus habilidades en la utilización de la comunidad ")]
+        public string? ApoyoEducativoRequeridoUtilizacionComunidadDescripcion { get; set; } = " ";
 
+        [DisplayName("¿Requiere apoyos educativos para potenciar sus habilidades en el área de formación de trabajo?")]
         public int? ApoyoEducativoRequeridoFormacionTrabajo { get; set; } = 0;
 
-        [DisplayName("Apoyos educativos requeridos para potenciar sus habilidades en el área de formación para el trabajo")]
-        public string? ApoyoEducativoRequeridoFormacionTrabajoDescripcion { get; set; }
+        [DisplayName("Descripción de los apoyos educativos requeridos para potenciar sus habilidades en el área de formación para el trabajo")]
+        public string? ApoyoEducativoRequeridoFormacionTrabajoDescripcion { get; set; } = " ";
 
+        [DisplayName("¿Requiere apoyos educativos para potenciar sus habilidades en otras áreas?")]
         public int? ApoyoEducativoRequeridoOtros { get; set; } = 0;
 
-        [DisplayName("Apoyos educativos requeridos para potenciar sus habilidades en otras áreas")]
-        public string? ApoyoEducativoRequeridoOtrosDescripcion { get; set; }
-        
+        [DisplayName("Descripción de los apoyos educativos requeridos para potenciar sus habilidades en otras áreas")]
+        public string? ApoyoEducativoRequeridoOtrosDescripcion { get; set; } = " ";
+
         // V. Observaciones
         [Required(ErrorMessage = "Se debe especificar si tuvo asesoría previa")]
         [DisplayName("¿Ha recibido asesoría previa?")]
-        public int? AsesoriaPrevia { get; set; }
+        public int? AsesoriaPrevia { get; set; } = 0;
 
         [Required(ErrorMessage = "Se debe especificar la sede donde se recibió asesoría previa")]
         [DisplayName("Sede donde se recibió la asesoría previa")]
@@ -266,22 +274,22 @@ namespace ProyectoSadas.Models
 
         [Required]
         [DisplayName("¿Adjunta certificación médica de la Caja Costarricense del Seguro Social (CCSS)?")]
-        public int? AdjuntaCertificacionMedicaCCSS { get; set; }
+        public int? AdjuntaCertificacionMedicaCCSS { get; set; } = 0;
 
         [Required]
         [DisplayName("¿Adjunta certificación médica de la Consejo Nacional de Personas con Discapcidad (CONAPDIS)?")]
-        public int? AdjuntaCertificacionMedicaCONAPDIS { get; set; }
+        public int? AdjuntaCertificacionMedicaCONAPDIS { get; set; } = 0;
 
         [Required]
         [DisplayName("¿Ha realizado alguna solicitud previa para obtener productos de apoyo con algún presupuesto de Gobierno?")]
-        public int? ProductoApoyoGubernamental { get; set; }
+        public int? ProductoApoyoGubernamental { get; set; } = 0;
 
         [DisplayName("Mencione el producto de apoyo solicitado")]
         public string? ProductoApoyoGubernamentalDescripcion { get; set; } = " ";
 
         [Required]
         [DisplayName("¿Ha realizado alguna solicitud previa para obtener productos de apoyo con algún de Organizaciones No Gubernamentales?")]
-        public int? ProductoApoyoNoGubernamental { get; set; }
+        public int? ProductoApoyoNoGubernamental { get; set; } = 0;
 
         [DisplayName("Mencione el producto de apoyo solicitado")]
         public string? ProductoApoyoNoGubernamentalDescripcion { get; set; } = " ";

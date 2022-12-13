@@ -1,35 +1,17 @@
 ﻿@model IEnumerable<ProyectoSadas.Models.Solicitud>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Índice";
 }
-
-<h1>Index</h1>
+<br />
+<h1>Índice</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Registrar nueva solicitud</a>
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaRealiza)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NombrePersonaSolicitante)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PuestoDesenpenna)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OtroAnote)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NumeroTelefono)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CorreoElectronico)
-            </th>
+        <tr class="text-center">
             <th>
                 @Html.DisplayNameFor(model => model.FechaRecibe)
             </th>
@@ -40,10 +22,13 @@
                 @Html.DisplayNameFor(model => model.NombrePersonaRecibe)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MetodoEnvio)
+                @Html.DisplayNameFor(model => model.NombrePersonaSolicitante)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TipoDocumentoIdentidadPersonaEstudiante)
+                @Html.DisplayNameFor(model => model.NumeroTelefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CorreoElectronico)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DocumentoIdentidadPersonaEstudiante)
@@ -51,198 +36,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.NombrePersonaEstudiante)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaNacimientoEstudiante)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EdadEstudiante)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NivelEducativoEstudiante)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServicioEducativoPerteneceEstudiante)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DescripcionCondicionPresentaEstudiante)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NombreMadreEstudiante)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NombrePadreEstudiante)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OtraPersonaResponsableEstudiante)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CorreoElectronicoEstudiante)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NumeroTelefonoEstudiante)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProvinciaEstudiante)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CantonEstudiante)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DistritoEstudiante)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DireccionEstudiante)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NombreCentroEducativo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NumeroTelefonoCentroEducativo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OtroNumeroTelefonoCentroEducativo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CorreoElectronicoCentroEducativo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProvinciaCentroEducativo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CantonCentroEducativo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DistritoCentroEducativo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DireccionCentroEducativo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RegionEducativaCentroEducativo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CircuitoCentroEducativo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PersonaDocenteCentroEducativo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CorreoPersonaDocenteCentroEducativo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NombrePersonaCentroEducativo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MotivoSolicitud)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApoyoOrganizatiVoSolicitud)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductoApoyoEmpleadoSolicitud)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServicioApoyoRecibe)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServicioApoyoRecibeRegionEducativa)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApoyoEducativoRequeridoComunicacion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApoyoEducativoRequeridoComunicacionDescripcion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApoyoEducativoRequeridoAutocuidado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApoyoEducativoRequeridoAutocuidadoDescripcion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApoyoEducativoRequeridoAcademica)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApoyoEducativoRequeridoAcademicaDescripcion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApoyoEducativoRequeridoMotriz)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApoyoEducativoRequeridoMotrizDescripcion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApoyoEducativoRequeridoVisual)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApoyoEducativoRequeridoVisualDescripcion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApoyoEducativoRequeridoUtilizacionComunidad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApoyoEducativoRequeridoUtilizacionComunidadDescripcion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApoyoEducativoRequeridoFormacionTrabajo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApoyoEducativoRequeridoFormacionTrabajoDescripcion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApoyoEducativoRequeridoOtros)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApoyoEducativoRequeridoOtrosDescripcion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AsesoriaPrevia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SedeAsesoriaPrevia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AdjuntaCertificacionMedicaCCSS)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AdjuntaCertificacionMedicaCONAPDIS)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductoApoyoGubernamental)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductoApoyoGubernamentalDescripcion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductoApoyoNoGubernamental)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductoApoyoNoGubernamentalDescripcion)
-            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaRealiza)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombrePersonaSolicitante)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PuestoDesenpenna)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OtroAnote)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumeroTelefono)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CorreoElectronico)
-            </td>
+        <tr class="text-center">
             <td>
                 @Html.DisplayFor(modelItem => item.FechaRecibe)
             </td>
@@ -253,10 +52,13 @@
                 @Html.DisplayFor(modelItem => item.NombrePersonaRecibe)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MetodoEnvio)
+                @Html.DisplayFor(modelItem => item.NombrePersonaSolicitante)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TipoDocumentoIdentidadPersonaEstudiante)
+                @Html.DisplayFor(modelItem => item.NumeroTelefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CorreoElectronico)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DocumentoIdentidadPersonaEstudiante)
@@ -265,177 +67,9 @@
                 @Html.DisplayFor(modelItem => item.NombrePersonaEstudiante)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FechaNacimientoEstudiante)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EdadEstudiante)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NivelEducativoEstudiante)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ServicioEducativoPerteneceEstudiante)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DescripcionCondicionPresentaEstudiante)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombreMadreEstudiante)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombrePadreEstudiante)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OtraPersonaResponsableEstudiante)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CorreoElectronicoEstudiante)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumeroTelefonoEstudiante)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProvinciaEstudiante)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CantonEstudiante)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DistritoEstudiante)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DireccionEstudiante)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombreCentroEducativo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumeroTelefonoCentroEducativo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OtroNumeroTelefonoCentroEducativo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CorreoElectronicoCentroEducativo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProvinciaCentroEducativo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CantonCentroEducativo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DistritoCentroEducativo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DireccionCentroEducativo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RegionEducativaCentroEducativo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CircuitoCentroEducativo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PersonaDocenteCentroEducativo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CorreoPersonaDocenteCentroEducativo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombrePersonaCentroEducativo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MotivoSolicitud)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApoyoOrganizatiVoSolicitud)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductoApoyoEmpleadoSolicitud)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ServicioApoyoRecibe)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ServicioApoyoRecibeRegionEducativa)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApoyoEducativoRequeridoComunicacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApoyoEducativoRequeridoComunicacionDescripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApoyoEducativoRequeridoAutocuidado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApoyoEducativoRequeridoAutocuidadoDescripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApoyoEducativoRequeridoAcademica)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApoyoEducativoRequeridoAcademicaDescripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApoyoEducativoRequeridoMotriz)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApoyoEducativoRequeridoMotrizDescripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApoyoEducativoRequeridoVisual)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApoyoEducativoRequeridoVisualDescripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApoyoEducativoRequeridoUtilizacionComunidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApoyoEducativoRequeridoUtilizacionComunidadDescripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApoyoEducativoRequeridoFormacionTrabajo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApoyoEducativoRequeridoFormacionTrabajoDescripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApoyoEducativoRequeridoOtros)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApoyoEducativoRequeridoOtrosDescripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AsesoriaPrevia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SedeAsesoriaPrevia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AdjuntaCertificacionMedicaCCSS)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AdjuntaCertificacionMedicaCONAPDIS)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductoApoyoGubernamental)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductoApoyoGubernamentalDescripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductoApoyoNoGubernamental)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductoApoyoNoGubernamentalDescripcion)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
             </td>
         </tr>
 }

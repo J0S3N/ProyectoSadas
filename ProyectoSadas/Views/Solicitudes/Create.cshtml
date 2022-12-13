@@ -27,7 +27,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="PuestoDesenpenna" class="control-label"></label>
-                <input asp-for="PuestoDesenpenna" class="form-control" />
+                <select asp-for="PuestoDesenpenna" class="form-select">
+                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
+                    <option>Equipo Regional Itinerante</option>
+                    <option>Docente EGB</option>
+                    <option>Docente EE</option>
+                    <option>Encargado de familia</option>
+                    <option>Equipo Regional Itinerante</option>
+                    <option>Estudiante</option>
+                    <option>Docente de apoyo</option>
+                    <option>Otro</option>
+                </select>
                 <span asp-validation-for="PuestoDesenpenna" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -174,23 +184,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="ProvinciaEstudiante" class="control-label"></label>
-                <select asp-for="ProvinciaEstudiante" class="form-select" id="slt-provincias-estudiante">
-                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
-                </select>
+                 <input asp-for="ProvinciaEstudiante" class="form-control" />
                 <span asp-validation-for="ProvinciaEstudiante" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CantonEstudiante" class="control-label"></label>
-                <select asp-for="CantonEstudiante" class="form-select" id="slt-cantones-estudiante">
-                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
-                </select>
+                <input asp-for="CantonEstudiante" class="form-control" />
                 <span asp-validation-for="CantonEstudiante" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DistritoEstudiante" class="control-label"></label>
-                <select asp-for="DistritoEstudiante" class="form-select" id="slt-distritos-estudiante">
-                    <option selected="selected" disabled="true">Por favor, seleccione una opción</option>
-                </select>
+                 <input asp-for="DistritoEstudiante" class="form-control" />
                 <span asp-validation-for="DistritoEstudiante" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -412,7 +416,7 @@
             </div>
             <div>
                 <br />
-                <h3>V. Obvservaciones</h3>
+                <h3>V. Observaciones</h3>
                 <hr />
             </div>
             <div class="form-group">
@@ -436,19 +440,19 @@
                 <span asp-validation-for="SedeAsesoriaPrevia" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AdjuntaCertificacionMedicaCCSS" class="control-label"></label>
-                <br />
-                Sí: <input asp-for="AdjuntaCertificacionMedicaCCSS" type="radio" value=1 class="form-check-input" checked="checked" />
+                <label asp-for="AdjuntaCertificacionMedicaCCSS" class="control-label"></label>                
                 <br />
                 No: <input asp-for="AdjuntaCertificacionMedicaCCSS" type="radio" value=0 class="form-check-input" />
+                <br />
+                Sí: <input asp-for="AdjuntaCertificacionMedicaCCSS" type="radio" value=1 class="form-check-input" checked="checked" />
                 <span asp-validation-for="AdjuntaCertificacionMedicaCCSS" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="AdjuntaCertificacionMedicaCONAPDIS" class="control-label"></label>
                 <br />
-                Sí: <input asp-for="AdjuntaCertificacionMedicaCONAPDIS" type="radio" value=1 class="form-check-input" checked="checked" />
-                <br />
                 No: <input asp-for="AdjuntaCertificacionMedicaCONAPDIS" type="radio" value=0 class="form-check-input" />
+                <br />
+                Sí: <input asp-for="AdjuntaCertificacionMedicaCONAPDIS" type="radio" value=1 class="form-check-input" checked="checked" />
                 <span asp-validation-for="AdjuntaCertificacionMedicaCONAPDIS" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -476,6 +480,9 @@
                 <label asp-for="ProductoApoyoNoGubernamentalDescripcion" class="control-label"></label>
                 <textarea asp-for="ProductoApoyoNoGubernamentalDescripcion" class="form-control" id="producto-no-gubernamental-descripcion" disabled="true"></textarea>
                 <span asp-validation-for="ProductoApoyoNoGubernamentalDescripcion" class="text-danger"></span>
+            </div>
+            <div>
+                @Html.HiddenFor(model => model.EdadEstudiante, new { id = "edad-estudiante-hidden", value = ""})
             </div>
             <div class="form-group">
                 <br />
@@ -512,7 +519,9 @@
             var ageY = currentY - prevY;
             var ageM = Math.abs(currentM - prevM);
 
-            document.getElementById('edad').value = ageY + " años y " + ageM + ' meses';
+            edad1 =  String(ageY + " años y " + ageM + ' meses');
+            document.getElementById('edad').value = edad1;
+            document.getElementById('edad-estudiante-hidden').value = edad1;
         }
     </script>
     <script>
