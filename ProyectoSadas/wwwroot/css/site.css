@@ -17,6 +17,32 @@ body {
     margin-bottom: 60px;
 }
 
+dl {
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0
+}
+
+dt {
+    float: left;
+    width: 50%;
+    /* adjust the width; make sure the total of both is 100% */
+    padding: 0;
+    margin: 0
+}
+
+dd {
+    float: left;
+    width: 50%;
+    /* adjust the width; make sure the total of both is 100% */
+    padding: 0;
+    margin: 0
+}
+
+textarea {
+    height: 150px;
+}
 
 @import "bootstrap";
 
@@ -27,4 +53,8 @@ body {
 
 .btn, .btn-primary {
     background-color: #04A64B !important;
+}
+
+.btn, .btn-danger {
+    background-color: #F0856A !important;
 }

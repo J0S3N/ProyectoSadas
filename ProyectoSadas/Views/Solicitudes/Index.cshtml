@@ -43,7 +43,7 @@
 @foreach (var item in Model) {
         <tr class="text-center">
             <td>
-                @Html.DisplayFor(modelItem => item.FechaRecibe)
+                @Convert.ToDateTime(item.FechaRecibe).ToString("dd/MM/yyyy")
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SedeRecibe)
